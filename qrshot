@@ -1,12 +1,12 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 ############################################################################
-# Depends for run: zbarimg, qrencode, scrot
+# Depends for run: zbarimg(from zbar-tools), qrencode, scrot
 ############################################################################
 
 
 # Check depends
 for check in 'zbarimg' 'qrencode' 'scrot'; do
-    if ! type -P "$check" 1 >/dev/null 2>/dev/null; then
+    if ! type -P "$check" &> /dev/null; then
         echo "Please install $check"
         exit 1
     fi
